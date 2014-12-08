@@ -1,0 +1,31 @@
+<head>
+    <!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+    <!--<script src="http://d3js.org/d3.v3.min.js"></script>-->
+    <script src="geo.ext.min.js" charset="utf-8"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.js" charset="utf-8"></script>
+    <script src="geo.min.js" charset="utf-8"></script>
+
+    <style>
+        html, body, #map {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #overlay {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+        }
+    </style>
+
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="overlay">
+        <select id="colorby">
+        </select>
+    </div>
+</body>
