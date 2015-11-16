@@ -11,8 +11,6 @@ $(function () {
         unemployment,
         density,
         missy,
-        amy,
-        jen,
         // tracts,
         colorBy = 'Region';
 
@@ -22,8 +20,6 @@ $(function () {
         .defer(d3.csv, "Unemployment+Unsorted.csv")
         .defer(d3.csv, "Zipcode-ZCTA-Population-Density-And-Area-Unsorted.csv")
         .defer(d3.json, "missy.json")
-        .defer(d3.json, "amy.json")
-        .defer(d3.json, "jen.json")
         // .defer(d3.json, "tl_2010_36_tract10/tl_2010_36_tract10.json")
         .await(ready);
 
@@ -88,14 +84,12 @@ $(function () {
         return [d.x, d.y];
     });
 
-    function ready(error, dat, rec, unemp, den, mis, am, jn) {
+    function ready(error, dat, rec, unemp, den, mis) {
         data = dat;
         records = rec;
         unemployment = unemp;
         density = den;
         missy = mis;
-        amy = am;
-        jen = jn;
         // tracts = tr;
         render();
     }
@@ -111,12 +105,6 @@ $(function () {
 
         missy.forEach(function (zip) {
             region[zip] = 1;
-        });
-        amy.forEach(function (zip) {
-            region[zip] = 2;
-        });
-        jen.forEach(function (zip) {
-            region[zip] = 3;
         });
 
         regionColor(1);
